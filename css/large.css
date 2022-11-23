@@ -1,0 +1,71 @@
+/* 64em is also 1028px (if basefont is 16px) */
+@media only screen and (min-width: 64rem) {
+
+
+ /*----------- BODY --------------*/
+  
+
+  /*----------- HEADER --------------*/
+  
+  
+  
+  /*----------- NAVIGATION --------------*/
+  
+ 
+  /*----------- MAIN --------------*/
+  
+  .vehicle-display-box div
+  {
+    top: 2em;
+    left: 2em;
+    font-size: 1.2em;
+  }
+
+.vehicle-details-grid
+{
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  align-items: flex-start;
+  justify-items: center;
+}
+
+.vehicle-details-grid div:nth-child(1)
+{
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+.vehicle-details-grid div:nth-child(2)
+{
+  grid-column: 1/2;
+  grid-row: 1/2;
+  width: 80%;
+}
+
+.vehicle-upgrades-grid div:nth-child(1)
+{
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.vehicle-upgrades-grid div:nth-child(2)
+{
+  grid-column: 2/3;
+  grid-row: 1/2;
+  width: auto;
+}
+
+
+.vehicle-man-grid
+{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 100%;
+  min-height: 400px;
+  padding-right: 3em;
+  text-align: center;
+}
+
+
+  /*----------- FOOTER --------------*/
+      
+  
+} /* end of media query */

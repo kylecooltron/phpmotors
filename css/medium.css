@@ -1,0 +1,139 @@
+/* 35em is also 560px (if basefont is 16px) */
+@media only screen and (min-width: 35rem) {
+
+  html
+  {
+  background-image: url("/phpmotors/images/site/small_check.jpg");
+  }
+
+  /*----------- BODY --------------*/
+  
+  body
+  {
+    margin: 2em;
+    font-size: 16px;
+  }
+
+  #wrapper
+  {
+    border: 4px solid #4c96d7;
+    border-radius: 10px;
+  }
+  
+  /*----------- HEADER --------------*/
+  
+  
+  
+  /*----------- NAVIGATION --------------*/
+  
+
+  nav ul
+  {
+    padding: 1em 0 1em 0.5em;
+  }
+
+  nav ul li a
+  {
+    padding: 1em;
+  }
+ 
+
+  .welcome-msg
+{
+  font-family:'Times New Roman', Times, serif;
+  letter-spacing: 0.05em;
+  font-size: medium;
+  padding: 0 0 0 0;
+  margin-top: 0;
+  margin-right: 0.2em;
+  color: #0a366e;
+  font-weight:100;
+}
+
+.acct-welcome-box
+{
+  text-align: right;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+
+
+  /*----------- MAIN --------------*/
+  
+  .vehicle-display-box div
+  {
+    top: 0;
+    left: 0;
+    font-size: medium;
+  }
+  .vehicle-display-box div button
+{
+  display: block;
+  margin: 0.5em auto;
+}
+
+.vehicle-details-grid
+{
+  display: table;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#own-today-btn-mobile{
+  display: none;
+}
+
+
+.passreqs
+{
+  display: none;
+}
+
+.hinttext
+{
+  display: inline-block;
+}
+
+.vehicle-man-grid
+{
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+
+/* For vehicle display in classification view */
+#inv-display {
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+#inv-display h2{
+  font-size: 1rem;
+}
+
+#inv-display li {
+  max-width: 200px;
+  flex: 1 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+    
+#inv-display div {
+  width: 100%;
+}
+
+.vd-summary table, thead, tbody, tr, th {
+  display:table-row; text-align: left;
+}
+.vd-summary table, thead, tbody td {
+  display:table-cell; text-align: left;
+}
+
+  
+/*----------- FOOTER --------------*/
+      
+  
+} /* end of media query */
