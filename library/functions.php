@@ -107,3 +107,11 @@ function buildVehicleDetailDisplay($vehicleDetails){
   $dv .= '</table></div></div>';
   return $dv;
 }
+
+
+//**** functions for uploads and image management  */////
+
+
+function makeThumnailName(){
+  
+}
