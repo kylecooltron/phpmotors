@@ -213,9 +213,20 @@ function actionDeleteVehicle()
 
 # EXTRA CREDIT
 # catch and redirect if client is not above level 1
+if(in_array($action, [
+  "add-classification-page",
+  "add-vehicle-page",
+  "add-vehicle-submit",
+  "add-classification-submit",
+  "modify-vehicle-page",
+  "modify-vehicle-submit",
+  "delete-vehicle-page",
+  "delete-vehicle-submit",
+])){
 if( !isset($_SESSION['loggedin']) || $_SESSION['clientData']['clientLevel'] <= 1 ){
     # redirect to home page
     header('Location: /phpmotors/');
+}
 }
 
 # handle action
