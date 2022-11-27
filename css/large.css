@@ -65,6 +65,63 @@
 }
 
 
+#vehicle-img-grid .vehicle-thumb-display
+{
+  display: flex;
+  flex-direction: column;
+  margin: 0.1em;
+  background-color: white;
+}
+
+#vehicle-deets .vehicle-thumb-display
+{
+  display: none;
+}
+
+#vehicle-deets h3
+{
+  display: none;
+}
+
+#vehicle-deets
+{
+  padding-left: 4em;
+  margin: 0;
+  width: 50%;
+}
+
+#vehicle-deets p
+{
+ margin: 0.5em 0;
+}
+
+#vehicle-img-grid
+{
+  display: flex;
+  flex-direction: row;
+}
+
+#vehicle-gridbox
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* grid-template-columns: 1fr 1fr; */
+  /* column-gap: 1fr; */
+}
+
+#prime-img
+{
+  margin: 1em;
+  width: 80%;
+}
+
+#vehicle-gridbox div
+{
+  margin: 1em;
+  align-self: center;
+}
+
   /*----------- FOOTER --------------*/
       
   

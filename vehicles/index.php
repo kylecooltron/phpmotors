@@ -10,6 +10,8 @@ require_once '../library/connections.php';
 require_once '../model/main-model.php';
 # shared model
 require_once '../model/shared-model.php';
+# uploads model
+require_once '../model/uploads-model.php';
 # form controller module
 require_once '../library/forms.php';
 # functions library
@@ -358,10 +360,19 @@ switch ($action) {
   case 'vehicle-details-page':
     $inventoryId = filter_input(INPUT_GET, 'invId', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $details = getInvItemInfo($inventoryId);
+    $thumbnails = getVehicleThumbnailImages($inventoryId);
     if(!count($details)){
       $message = "<p class='notice'>Sorry, error.</p>";
     }else{
-      $vehicleDetailsDisplay = buildVehicleDetailDisplay($details);
+      $vehicleThumbnailsDisplay = "";
+      if(count($thumbnails)){
+        $vehicleThumbnailsDisplay = buildVehicleThumbnailDisplay($thumbnails);
+      }
+      $vehicleDetailsDisplay = buildVehicleDetailDisplay(
+        $details,
+        $vehicleThumbnailsDisplay
+      );
+      
       include '../view/vehicle-detail.php';
     }
   break;

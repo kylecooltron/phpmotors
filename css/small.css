@@ -445,6 +445,61 @@ padding: 2em;
 tr:nth-child(even) {background: #CCC}
 tr:nth-child(odd) {background: rgb(242, 242, 242)}
 
+
+/* home page  */
+#vehicle-detail-display
+{
+  position: relative;
+  text-align: center;
+}
+
+#prime-img
+{
+  width: 100%;
+  margin-top: 2em;
+  max-width: 800px;
+}
+
+#vehicle-img-grid h3
+{
+  display: none;
+}
+
+#vehicle-img-grid .vehicle-thumb-display
+{
+  display: none;
+}
+
+#vehicle-deets .vehicle-thumb-display
+{
+  display: flex;
+  flex-direction: row;
+}
+.vehicle-thumb-display
+{
+  justify-content: center;
+  background-color: rgb(252, 252, 252);
+  margin-top: 1em;
+}
+.vehicle-thumb-display img
+{
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding: 0.5em;
+  max-width: 150px;
+  max-height:200px;
+  transition: 0.5s;
+  align-self: center;
+  cursor: pointer;
+}
+.vehicle-thumb-display img:hover
+{
+  margin-top: 1em;
+  padding: 0.5em;
+  max-width: 300px;
+}
+
+
 /* footer */
 footer
 {

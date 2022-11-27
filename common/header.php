@@ -1,5 +1,5 @@
 <!-- header -->
-<a href="/" title="Home">
+<a href="/phpmotors/index.php" title="Home">
   <img src="/phpmotors/images/site/logo.png" alt="PHP Motors logo">
 </a>
 <div class="acct-welcome-box">
