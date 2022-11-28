@@ -22,7 +22,7 @@ if(isset($_SESSION['loggedin'])){
 
 ?>
 </div>
-<a href="" class="search-link">
+<a href="/phpmotors/search/index.php?action=vehicle-search-page" class="search-link" title='Search'>
   <img src="/phpmotors/images/site/search.png" alt="search icon">
 </a>
 </div>

@@ -127,6 +127,25 @@ function buildVehicleThumbnailDisplay($thumbnails){
 }
 
 
+
+/* * ********************************
+*  Functions for handling search results
+* ********************************* */
+
+function buildSearchResults($data, $searchText){
+  $dv = "<h3>Found " . count($data) . " results that matched $searchText </h3>";
+  $dv .= '<ul class="vehicle-search-results">';
+  foreach($data as $vehicle){
+    $dv .= "<li>";
+    $dv .= "<h4>$vehicle[invMake] $vehicle[invModel]</h4>";
+    $dv .= "<p>$vehicle[invDescription]</p>";
+    $dv .= "</li>";
+  }
+  $dv .= '</ul>';
+  return $dv;
+}
+
+
 /* * ********************************
 *  Functions for working with images
 * ********************************* */
@@ -288,3 +307,5 @@ function resizeImage($old_image_path, $new_image_path, $max_width, $max_height) 
    // Free any memory associated with the old image
    imagedestroy($old_image);
 } // ends resizeImage function
+
+

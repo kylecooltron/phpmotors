@@ -80,3 +80,4 @@ function getVehicles(){
 	$stmt->closeCursor();
 	return $invInfo;
 }
+

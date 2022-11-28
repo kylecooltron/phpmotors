@@ -50,14 +50,14 @@ if (isset($_SESSION['message'])) {
           <!-- TODO WHY DOES CLASSIFICATION HAVE CLIENT FIRST NAME AS VALUE? -->
 
       <!-- search form -->
-      <form action="/phpmotors/vehicles/index.php" method="post">
+      <form action="/phpmotors/search/index.php" method="get">
           <div class="hinted">
             <label for="searchText">Enter your search:</label>
             <input type="text" id="searchText" 
               name="searchText"
               maxlength="30"
-              <?php if (isset($stickySearch)) {
-                  echo "value='$stickySearch'";
+              <?php if (isset($searchText)) {
+                  echo "value='$searchText'";
               }?> required>
               <span class="hinttext">30 characters maximum</span>
           </div>
@@ -70,7 +70,9 @@ if (isset($_SESSION['message'])) {
 
       <?php
         # echo out search results
-        echo $navList;
+        if (isset($searchResults)) {
+          echo $searchResults;
+        }
       ?>
 
     </main>
