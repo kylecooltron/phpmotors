@@ -388,6 +388,14 @@ switch ($action) {
     }
   break;
 
+  case 'vehicle-search-page':
+    include '../view/vehicle-search.php';
+  break;
+
+  case 'vehicle-search-submit':
+    include '../view/vehicle-search.php';
+  break;
+
   default:
   $classificationList = buildClassificationList($classifications);
   include '../view/vehicle-man.php';

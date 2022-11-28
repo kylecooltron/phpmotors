@@ -94,6 +94,8 @@ text-decoration: none;
 .acct-welcome-box
 {
   text-align: right;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .back-link{
@@ -101,7 +103,21 @@ text-decoration: none;
   text-align: center;
 }
 
+.acct-bar-container
+{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 
+.search-link
+{
+  padding-right: 0.5em;
+}
+.search-link img
+{
+  max-width: 30px;
+}
 
 main
 {
