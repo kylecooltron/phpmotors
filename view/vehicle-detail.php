@@ -5,7 +5,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><?php echo $classificationName; ?> vehicles | PHP Motors, Inc.</title>
+  <title>
+  <?php 
+    if(isset($details)){
+      echo $details['invMake'] . " " . $details['invModel'];
+    }else{
+      echo 'error';
+    }
+  ?> | PHP Motors, Inc.</title>
   <meta name="author" content="Kyle Coulon">
   <meta name="description" content="PHP Motors student website">
   <!-- google fonts -->
@@ -31,13 +38,7 @@
     <!-- main content -->
     <main>
       
-      <h1><?php 
-        if(isset($details)){
-          echo $details['invMake'] . $details['invModel'];
-        }else{
-          echo 'error';
-        }
-      ?></h1>
+      <h1>Vehicle Details</h1>
 
       <!-- display message -->
       <?php if(isset($message)){

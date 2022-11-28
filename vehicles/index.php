@@ -133,7 +133,7 @@ function actionUpdateVehicle()
 {
   # form input filter types and names
   $inputs_array = array(
-    "invId" => "int",
+    "invId" => "string",
     "invMake" => "string",
     "invModel" => "string",
     "invDescription" => "string",
@@ -182,7 +182,7 @@ function actionDeleteVehicle()
 {
   # form input filter types and names
   $inputs_array = array(
-    "invId" => "int",
+    "invId" => "string",
     "invMake" => "string",
     "invModel" => "string",
   );

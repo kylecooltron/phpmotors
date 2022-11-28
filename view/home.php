@@ -36,7 +36,7 @@
 
       <section>
         <div class="vehicle-display-box">
-          <img src="images/vehicles/delorean.jpg" alt="Delorean cartoon render">
+          <img src="images/vehicles/1982-dmc-delorean.jpg" alt="Delorean cartoon render">
           <!-- buy box -->
           <div>
             <h2>DMC Delorean</h2>

@@ -35,10 +35,10 @@ function getInvItemInfo($invId){
           FROM inventory
           JOIN images ON images.invId = inventory.invId
           WHERE inventory.invId = :invId
-          AND images.imgPrimary = 1
+          -- AND images.imgPrimary = 1
           AND images.imgPath NOT LIKE "%-tn.jpg"';
   $stmt = $db->prepare($sql);
-  $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
+  $stmt->bindValue(':invId', $invId, PDO::PARAM_STR);
   $stmt->execute();
   $invInfo = $stmt->fetch(PDO::FETCH_ASSOC);
   $stmt->closeCursor();
@@ -56,7 +56,7 @@ function getVehiclesByClassification($classificationName){
             SELECT classificationId FROM carclassification 
             WHERE classificationName = :classificationName
           )
-          AND images.imgPrimary = 1
+          -- AND images.imgPrimary = 1
           AND images.imgPath LIKE "%-tn.jpg"';
   $stmt = $db->prepare($sql);
   $stmt->bindValue(':classificationName', $classificationName, PDO::PARAM_STR);

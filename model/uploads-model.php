@@ -81,7 +81,7 @@ function getVehicleThumbnailImages($invId) {
             -- AND imgPrimary = 0
             AND imgPath LIKE "%-tn.jpg"';
     $stmt = $db->prepare($sql);
-    $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
+    $stmt->bindValue(':invId', $invId, PDO::PARAM_STR);
     $stmt->execute();
     $imageArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $stmt->closeCursor();
