@@ -24,8 +24,21 @@ switch ($action) {
 
   case 'vehicle-search-submit':
     $searchText = filter_input(INPUT_GET, 'searchText', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    $searchData = search_vehicles($searchText);
-    $searchResults = buildSearchResults($searchData, $searchText);
+    $searchPage = filter_input(INPUT_GET, 'searchPage', FILTER_SANITIZE_NUMBER_INT);
+
+    if($searchText != ""){
+      $searchData = search_vehicles($searchText);
+      if(count($searchData) > 0){
+        $searchResults = buildSearchResults($searchData, $searchText, $searchPage); 
+        $pagination = buildSearchPagination($searchData, $searchText, $searchPage);
+      }
+    }
+    if(!isset($searchResults)){
+      $message = "No results found.";
+    }
+    if(!isset($searchData)){
+      $message = "Please enter a valid search string.";
+    }
     include '../view/vehicle-search.php';
   break;
   

@@ -20,6 +20,36 @@
     border-radius: 10px;
   }
   
+  #prime-img
+  {
+    max-width: 600px;
+  }
+
+  .search-details
+  {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1em;
+    margin-bottom: 0.7em;
+  }
+  .search-details p
+  {
+    max-width: 900px;
+  }
+  .vehicle-search-results
+  {
+    justify-content: center;
+  }
+  .vehicle-search-results li
+  {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .vd-summary
+  {
+  padding: 1em;
+  }
   /*----------- HEADER --------------*/
   
   

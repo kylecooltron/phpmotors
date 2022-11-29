@@ -73,6 +73,9 @@ if (isset($_SESSION['message'])) {
         if (isset($searchResults)) {
           echo $searchResults;
         }
+        if (isset($pagination)) {
+          echo $pagination;
+        }
       ?>
 
     </main>

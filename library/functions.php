@@ -132,19 +132,66 @@ function buildVehicleThumbnailDisplay($thumbnails){
 *  Functions for handling search results
 * ********************************* */
 
-function buildSearchResults($data, $searchText){
+function buildSearchResults($data, $searchText, $page=0){
+  $itemsPerPage = 4;
+  $length = $itemsPerPage;
+  if(($page+1) * $itemsPerPage > count($data)){
+    $length = count($data) % $itemsPerPage;
+    echo "wow" . $length;
+  }
+  $pageData = array_slice($data, $page * $itemsPerPage, $length);
+
   $dv = "<h3>Found " . count($data) . " results that matched $searchText </h3>";
+  $dv .= "<p>Showing results " . ($page * $itemsPerPage + 1) . " - " . ($page * $itemsPerPage + $length);
   $dv .= '<ul class="vehicle-search-results">';
-  foreach($data as $vehicle){
+  foreach($pageData as $vehicle){
     $dv .= "<li>";
-    $dv .= "<h4>$vehicle[invMake] $vehicle[invModel]</h4>";
+    # title link
+    $dv .= "<a href='/phpmotors/vehicles/?action=vehicle-details-page&invId="  . urlencode($vehicle['invId']) . "'>";
+    $dv .= "<h4>$vehicle[invMake] $vehicle[invModel] </h4> </a>";
+    # details
+    $dv .= "<div class='search-details'>";
+    $dv .= "<a href='/phpmotors/vehicles/?action=vehicle-details-page&invId="  . urlencode($vehicle['invId']) . "'>";
+    $dv .= "<img src='$vehicle[imgPath]' alt='$vehicle[imgName]'> </a>";
     $dv .= "<p>$vehicle[invDescription]</p>";
+    $dv .= "</div>";
     $dv .= "</li>";
   }
   $dv .= '</ul>';
   return $dv;
 }
 
+function buildSearchPagination($data, $searchText, $currentPage = 0){
+  $itemsPerPage = 4;
+  $pages = ceil(count($data) / $itemsPerPage);
+
+  $dv = "<div class='pagination'>";
+  if($currentPage > 0){
+    $dv .= "<a href='/phpmotors/search/index.php?action=vehicle-search-submit&searchText=" . $searchText;
+    $dv .= "&searchPage=" . ($currentPage - 1) . "'>";
+    $dv .= "Prev </a>";
+  }
+  $dv .= "<ul>";
+  foreach(range(0, $pages-1) as $page){
+    $dv .= "<li>" ;
+    if($page != $currentPage){
+      $dv .= "<a href='/phpmotors/search/index.php?action=vehicle-search-submit&searchText=" . $searchText;
+      $dv .= "&searchPage=" . $page . "'>" . $page+1 . "</a>";
+    }else{
+      $dv .= $page+1;
+    }
+    $dv .= "</li>";
+  }
+  $dv .= "</ul>";
+  if($currentPage < $pages-1){
+    $dv .= "<a href='/phpmotors/search/index.php?action=vehicle-search-submit&searchText=" . $searchText;
+    $dv .= "&searchPage=" . ($currentPage + 1) . "'>";
+    $dv .= "Next </a>";
+  }
+  $dv .= "</div>";
+  
+  return $dv;
+}
 
 /* * ********************************
 *  Functions for working with images
