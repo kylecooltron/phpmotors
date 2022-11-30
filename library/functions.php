@@ -164,13 +164,14 @@ function buildSearchResults($data, $searchText, $page=0){
 function buildSearchPagination($data, $searchText, $currentPage = 0){
   $itemsPerPage = 4;
   $pages = ceil(count($data) / $itemsPerPage);
-
   $dv = "<div class='pagination'>";
+  # make previous button if needed
   if($currentPage > 0){
     $dv .= "<a href='/phpmotors/search/index.php?action=vehicle-search-submit&searchText=" . $searchText;
     $dv .= "&searchPage=" . ($currentPage - 1) . "'>";
     $dv .= "Prev </a>";
   }
+  # create list with page numbers
   $dv .= "<ul>";
   foreach(range(0, $pages-1) as $page){
     $dv .= "<li>" ;
@@ -183,13 +184,13 @@ function buildSearchPagination($data, $searchText, $currentPage = 0){
     $dv .= "</li>";
   }
   $dv .= "</ul>";
+  # create back button if needed
   if($currentPage < $pages-1){
     $dv .= "<a href='/phpmotors/search/index.php?action=vehicle-search-submit&searchText=" . $searchText;
     $dv .= "&searchPage=" . ($currentPage + 1) . "'>";
     $dv .= "Next </a>";
   }
   $dv .= "</div>";
-  
   return $dv;
 }
 

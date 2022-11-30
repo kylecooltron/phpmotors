@@ -321,6 +321,14 @@ input[type=submit]:hover
   visibility: visible;
 }
 
+.hinttext-two
+{
+  background-color: rgba(206, 231, 255, 0.596);
+  left: 60%;
+  top:0%;
+}
+
+
 
 .message-yes
 {

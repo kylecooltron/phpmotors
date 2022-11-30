@@ -9,8 +9,11 @@
 */
 
 
-
 function search_vehicles($searchText){
+  /**
+   * Query to find inventory items that contain a given string in certain columns.
+   * Returns: An array of inventory info, and image info.
+   */
   $newText = "%".$searchText."%";
   $db = phpmotorsConnect();
   $sql = 'SELECT inventory.*, images.imgPath, images.imgName FROM inventory

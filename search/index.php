@@ -26,13 +26,19 @@ switch ($action) {
     $searchText = filter_input(INPUT_GET, 'searchText', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $searchPage = filter_input(INPUT_GET, 'searchPage', FILTER_SANITIZE_NUMBER_INT);
 
+    # if filtered text is not empty
     if($searchText != ""){
+      # perform search
       $searchData = search_vehicles($searchText);
+      # if any results are found
       if(count($searchData) > 0){
+        # build search results for a given page number
         $searchResults = buildSearchResults($searchData, $searchText, $searchPage); 
+        # build pagination
         $pagination = buildSearchPagination($searchData, $searchText, $searchPage);
       }
     }
+    # report any problems
     if(!isset($searchResults)){
       $message = "No results found.";
     }

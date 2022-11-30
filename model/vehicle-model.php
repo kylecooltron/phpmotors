@@ -67,9 +67,6 @@ function getVehiclesByClassification($classificationName){
 }
 
 
-
-
-
 // Get information for all vehicles
 function getVehicles(){
 	$db = phpmotorsConnect();
