@@ -11,7 +11,7 @@ function storeImages($imgPath, $invId, $imgName, $imgPrimary) {
     $sql = 'INSERT INTO images (invId, imgPath, imgName, imgPrimary) VALUES (:invId, :imgPath, :imgName, :imgPrimary)';
     $stmt = $db->prepare($sql);
     // Store the full size image information
-    $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
+    $stmt->bindValue(':invId', $invId, PDO::PARAM_STR);
     $stmt->bindValue(':imgPath', $imgPath, PDO::PARAM_STR);
     $stmt->bindValue(':imgName', $imgName, PDO::PARAM_STR);
     $stmt->bindValue(':imgPrimary', $imgPrimary, PDO::PARAM_INT);
@@ -22,7 +22,7 @@ function storeImages($imgPath, $invId, $imgName, $imgPrimary) {
     $imgPath = makeThumbnailName($imgPath);
     // Change name in file name
     $imgName = makeThumbnailName($imgName);
-    $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
+    $stmt->bindValue(':invId', $invId, PDO::PARAM_STR);
     $stmt->bindValue(':imgPath', $imgPath, PDO::PARAM_STR);
     $stmt->bindValue(':imgName', $imgName, PDO::PARAM_STR);
     $stmt->bindValue(':imgPrimary', $imgPrimary, PDO::PARAM_INT);

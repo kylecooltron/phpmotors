@@ -73,7 +73,6 @@ function actionAddVehicle()
     "invThumbnail" => "string",
     "invPrice" => "float",
     "invColor" => "string",
-    "invStock" => "int",
     "classificationId" => "int"
   );
   # send data to be validated and inserted into db
@@ -141,7 +140,6 @@ function actionUpdateVehicle()
     "invThumbnail" => "string",
     "invPrice" => "float",
     "invColor" => "string",
-    "invStock" => "int",
     "classificationId" => "int"
   );
   # send data to be validated and inserted into db
@@ -272,7 +270,7 @@ switch ($action) {
   break;
 
   case 'modify-vehicle-page':
-    $invId = filter_input(INPUT_GET, 'invId', FILTER_VALIDATE_INT);
+    $invId = filter_input(INPUT_GET, 'invId', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $invInfo = getInvItemInfo($invId);
 
     $defaultClassification = NULL;
@@ -327,7 +325,7 @@ switch ($action) {
   break;
 
   case 'delete-vehicle-page':
-    $invId = filter_input(INPUT_GET, 'invId', FILTER_VALIDATE_INT);
+    $invId = filter_input(INPUT_GET, 'invId', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $invInfo = getInvItemInfo($invId);
     if(count($invInfo)<1){
       $message = 'Sorry, no vehicle information could be found.';

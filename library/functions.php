@@ -147,8 +147,9 @@ function buildSearchResults($data, $searchText, $page=0){
   foreach($pageData as $vehicle){
     $dv .= "<li>";
     # title link
-    $dv .= "<a href='/phpmotors/vehicles/?action=vehicle-details-page&invId="  . urlencode($vehicle['invId']) . "'>";
-    $dv .= "<h4>$vehicle[invMake] $vehicle[invModel] </h4> </a>";
+    $dv .= "<a href='/phpmotors/vehicles/?action=vehicle-details-page&invId="  . urlencode($vehicle['invId']) . "'";
+    $dv .= " title='Link to view " . $vehicle["invYear"] . " ". $vehicle["invMake"] . " ". $vehicle["invModel"] . "' >";
+    $dv .= "<h4>$vehicle[invYear] $vehicle[invMake] $vehicle[invModel] </h4> </a>";
     # details
     $dv .= "<div class='search-details'>";
     $dv .= "<a href='/phpmotors/vehicles/?action=vehicle-details-page&invId="  . urlencode($vehicle['invId']) . "'>";

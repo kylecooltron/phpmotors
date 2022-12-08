@@ -23,7 +23,7 @@ switch ($action) {
   break;
 
   case 'vehicle-search-submit':
-    $searchText = filter_input(INPUT_GET, 'searchText', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $searchText = filter_input(INPUT_GET, 'searchText', FILTER_SANITIZE_STRING);
     $searchPage = filter_input(INPUT_GET, 'searchPage', FILTER_SANITIZE_NUMBER_INT);
 
     # if filtered text is not empty

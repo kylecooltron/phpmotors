@@ -110,15 +110,6 @@ if ($_SESSION['clientData']['clientLevel'] < 2) {
                       echo "value='".$sticky["invPrice"]."'";
                     }else{echo "value='1.00'";}?> required />
             </div>
-            <div>
-              <!-- stock -->
-              <label for="invStock">Stock</label>
-              <input id="invStock" name="invStock" 
-                    type="number" min="0" step="1"
-                    <?php if (isset($sticky["invStock"])) {
-                      echo "value='".$sticky["invStock"]."'";
-                    }else{echo "value='1'";}?> required />
-            </div>
           </div>
 
           <!-- submit -->

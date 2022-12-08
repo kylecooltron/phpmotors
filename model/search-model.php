@@ -19,9 +19,10 @@ function search_vehicles($searchText){
   $sql = 'SELECT inventory.*, images.imgPath, images.imgName FROM inventory
           JOIN images ON images.invId = inventory.invId
           WHERE 
-          (invMake LIKE :searchText
+             (invMake LIKE :searchText
           OR invModel LIKE :searchText
-          OR invColor LIKE :searchText)
+          OR invColor LIKE :searchText
+          OR invDescription LIKE :searchText)
           AND images.imgPath LIKE "%-tn.jpg" ';
   $stmt = $db->prepare($sql);
   $stmt->bindValue(':searchText', $newText, PDO::PARAM_STR);
